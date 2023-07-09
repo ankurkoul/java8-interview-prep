@@ -47,3 +47,20 @@ class Engine {
 ```
 
 here we create Engine object in Car **constructor** hence If the car is destroyed, the engine will be destroyed as well.
+
+## 2. instance vs static variables
+
+Class consists of 
+- instance variables/methods they are known as instance
+   - --> as each instance get a **new copy** of each of them
+- Static variables/methods --->
+   -   Variables and methods can be created that are common to all objects and accessed without using a particular object by declaring them static.
+
+
+
+
+
+
+
+
+
