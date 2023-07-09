@@ -57,8 +57,25 @@ Class consists of
    -   Variables and methods can be created that are common to all objects and accessed without using a particular object by declaring them static.
 
 
+## 3 map.computeIfAbsent(key, k -> new ArrayList<>()) vs getOrDefault(key, new ArrayList<>()) 
+-  **map.computeIfAbsent(key, k -> new ArrayList<>())**
+    - If the key is not present --> then create new ArrayList<>() and **modify map **with association
+ ```
+   map.computeIfAbsent(key, k -> new ArrayList<>());
+   map.get(key).add(s);
+  // here we have already created associated list in map hence no need to put list again
+  ```
+    - 
+-  **map.getOrDefault(key, new ArrayList<>())**
+    - If the key is not present --> then **returns** new ArrayList<>() and ** but not modify map ** with association
+    -  hence involve 1 extra step to put list to map
 
-
+```
+  List<String> list = map.getOrDefault(key, new ArrayList<>());
+  list.add(s);
+  map.put(key, list);
+// here we have return unassociated list  and hence need to associate it with map 
+```
 
 
 
