@@ -24,12 +24,10 @@ class Employee {
 }
 ```
 Here we are not creating an **employee** object but using it in **list** passed by **addEmployee method**
-
 Composition :
 - "has-a" relationship
 -  death relationship
 -  as stronger ownership
-
 ```
 class Car {
     private Engine engine;
@@ -45,7 +43,6 @@ class Engine {
     // Engine class implementation
 }
 ```
-
 here we create Engine object in Car **constructor** hence If the car is destroyed, the engine will be destroyed as well.
 
 ## 2. instance vs static variables
@@ -56,7 +53,6 @@ Class consists of
 - Static variables/methods --->
    -   Variables and methods can be created that are common to all objects and accessed without using a particular object by declaring them static.
 
-
 ## 3 map.computeIfAbsent(key, k -> new ArrayList<>()) vs getOrDefault(key, new ArrayList<>()) 
 -  **map.computeIfAbsent(key, k -> new ArrayList<>())**
     - If the key is not present --> then create new ArrayList<>() and **modify map **with association
@@ -65,11 +61,9 @@ Class consists of
    map.get(key).add(s);
   // here we have already created associated list in map hence no need to put list again
   ```
-    - 
 -  **map.getOrDefault(key, new ArrayList<>())**
     - If the key is not present --> then **returns** new ArrayList<>() and ** but not modify map ** with association
     -  hence involve 1 extra step to put list to map
-
 ```
   List<String> list = map.getOrDefault(key, new ArrayList<>());
   list.add(s);
