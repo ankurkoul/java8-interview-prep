@@ -374,6 +374,7 @@ Note that none of the functional interfaces allow for a checked exception to be 
   
   ```
 
+![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/221f14f6-5f18-42df-9439-13a62aa1c434)
 
 
 
