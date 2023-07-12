@@ -376,10 +376,36 @@ Note that none of the functional interfaces allow for a checked exception to be 
 
 ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/221f14f6-5f18-42df-9439-13a62aa1c434)
 
+##11: Constructor references
+
+- ClassName::new
+
+![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/9023ba88-ffa5-4b4e-838f-d24ffdb5ddea)
+
+![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/d79b617c-314d-4f4e-8a45-62f336dfe325)
+
+```
+          public interface TriFunction<T, U, V, R>{
+                 R apply(T t, U u, V v);
+        }
+
+
+       TriFunction<Integer, Integer, Integer, Color> colorFactory = Color::new;
+```
+
+
+## 12: Composing Predicates
+- Predicate interface includes three methods that let you reuse an existing Predicate to create more complicated ones:
+-  negate, and, and or.
+-  negate:![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/78e36c5f-094a-4212-a070-87f0bbd847dd)
+-  and: ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/5954ee23-cb34-4a71-9c4e-a2beaa9a33a3)
+-  and/or: ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/b0e428b1-3bf0-4de5-9e3b-dc1e02cdacfb)
 
 
 
 
 
+
+ 
 
 
