@@ -339,6 +339,31 @@ Compare two objects	                    (Apple a1, Apple a2) ->{
 
 Note that none of the functional interfaces allow for a checked exception to be thrown
 
+## 9: capturing lambdas.
+- Lambda expressions are also allowed to use free variables (variables that aren’t the parameters and defined in an outer scope)
+- allowed to use ** instance variables and static variables** without restrictions.
+-  But **local variables** must be final or effectively final
+       -  reason: local variables live in stack if lambda were used in a thread,
+       -  then the thread using the lambda could try to access the variable after the thread that allocated the variable had deallocated it hence thread unsafe
+       -  instance variables are fine because they live on the heap, which is shared across threads
+       -  Hence, Java implements access to a free local variable as access to a copy of it rather than access to the original variable 
+-  lambda expressions can capture local variables that are assigned to them only once
+- ```
+         int portNumber = 1337;
+         Runnable r = () -> System.out.println(portNumber);
+         portNumber = 1337;
+  
+         //Compiler Error : local variable must be final or effectively final
+         reason because variable portNumber is assigned to twice
+  
+      ```
+
+## 10: method references:
+-shorthand for lambdas calling only a specific method.
+
+
+
+
 
 
 
