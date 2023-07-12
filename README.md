@@ -359,7 +359,7 @@ Note that none of the functional interfaces allow for a checked exception to be 
       ```
 
 ## 10: method references:
--shorthand for lambdas calling only a specific method.
+- shorthand for lambdas calling only a specific method.
 
 
 
