@@ -74,8 +74,14 @@ Class consists of
 ## 3. Behavior parameterization
 
 **Behavior parameterization is a software development pattern that lets you handle frequent requirement changes.**
+
 In a nutshell, it means taking a block of code and making it available without executing it. 
 This block of code can be called later by other parts of your programs, which means that you can defer the execution of that block of code. 
+
+- It lets you define a block of code that represents a behavior and then pass it around.
+- You can decide to run that block of code when a certain event happens (for example, a click on a button) or at certain points in an algorithm (for example, a predicate such as “only apples havinf 
+ color red ” in the filtering algorithm or the customized comparison operation in sorting).
+- In general, using this concept you can write code that’s more flexible and reusable.
 
 ```
 Attempt 1:
@@ -91,7 +97,10 @@ public static List<Apple> filterApplesByColor(List<Apple> inventory,
 }
 ```
 
-
+improve code based on strategy design pattern
+- it lets you define a family of algorithms,
+- encapsulate each algorithm (called a strategy),
+- and select an algorithm at run-time
 ```
 //------------------------------------------------------------------------------------------
 Attempt 2: achieve using class
@@ -168,9 +177,10 @@ public static <T> List<T> filter(List<T> inventory,  Predicate p) {
 List<Apple> redApples = filter(inventory, (Apple apple) -> "red".equals(apple.getColor()));
 ```
 
-Behavior parameterization is the ability for a method to take multiple different behaviors as parameters and use them internally to accomplish different behaviors.
-Behavior parameterization lets you make your code more adaptive to changing requirements and saves on engineering efforts in the future.
-Passing code is a way to give new behaviors as arguments to a method. But it’s verbose prior to Java 8. Anonymous classes helped a bit before Java 8 to get rid of the verbosity associated with declaring multiple concrete classes for an interface that are needed only once.
+- Behavior parameterization is the ability for a method to take multiple different behaviors as parameters and use them internally to accomplish different behaviors.
+- Behavior parameterization lets you make your code more adaptive to changing requirements and saves on engineering efforts in the future.
+- Passing code is a way to give new behaviors as arguments to a method. But it’s verbose prior to Java 8.
+- Anonymous classes helped a bit before Java 8 to get rid of the verbosity associated with declaring multiple concrete classes for an interface that are needed only once.
 The Java API contains many methods that can be parameterized with different behaviors, which include sorting, threads, and GUI handling.
 
 
