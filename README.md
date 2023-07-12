@@ -311,8 +311,9 @@ BiFunction<T, U, R>	 	                 (T, U) -> R 	                    	ToIntBi
 -  Hence Java 8 brings a specialized version of the functional interfaces
 -  ex: DoublePredicate,  IntConsumer,  LongFunction , LongBinaryOperator
   
-## 8:
+## 8:  Examples of lambdas with functional interfaces
 
+```
 Use case                       |             Example of lambda            |                      Matching functional interface
 
 A boolean expression	                    (List<String> list) -> list.isEmpty()	                    Predicate<List<String>>
@@ -323,6 +324,7 @@ Combine two values	                      (int a, int b) -> a * b                
 Compare two objects	                    (Apple a1, Apple a2) ->{
                                                a1.getWeight().compareTo (a2.getWeight())          	Comparator<Apple> or BiFunction<Apple, Apple, Integer> or ToIntBiFunction<Apple, Apple>
                                              }
+```
 
 
 
