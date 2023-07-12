@@ -194,5 +194,6 @@ A lambda expression can be understood as a concise representation of an anonymou
 - Passed around— A lambda expression can be passed as argument to a method or stored in a variable.
 - Concise— You don’t need to write a lot of boilerplate like you do for anonymous classes.
 
-
+ lambda expression is composed of parameters, an arrow, and a body.
+ (a,b) -> a.compareTo(b)
 
