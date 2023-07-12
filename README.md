@@ -196,4 +196,14 @@ A lambda expression can be understood as a concise representation of an anonymou
 
  lambda expression is composed of parameters, an arrow, and a body.
  (a,b) -> a.compareTo(b)
+ 
+ few  valid example: 
+1.  () -> {}      //This lambda has no parameters and returns void. It’s similar to a method with an empty body: public void run() { }.
+
+2.  () -> "Raoul"
+
+3.  () -> {return "Mario";}   //This lambda has no parameters and returns a String (using an explicit return statement).
+
+
+
 
