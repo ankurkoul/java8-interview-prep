@@ -73,7 +73,7 @@ Class consists of
 
 ## 3. Behavior parameterization
 
-Behavior parameterization is a software development pattern that lets you handle frequent requirement changes.
+**Behavior parameterization is a software development pattern that lets you handle frequent requirement changes.**
 In a nutshell, it means taking a block of code and making it available without executing it. 
 This block of code can be called later by other parts of your programs, which means that you can defer the execution of that block of code. 
 
