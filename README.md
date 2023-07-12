@@ -360,6 +360,19 @@ Note that none of the functional interfaces allow for a checked exception to be 
 
 ## 10: method references:
 - shorthand for lambdas calling only a specific method.
+- ```
+
+                Lambda                                                                                  Method reference equivalent
+                
+                (Apple a) -> a.getWeight()	                                                   Apple::getWeight
+  
+                () -> Thread.currentThread().dumpStack()	                                     Thread.currentThread()::dumpStack
+  
+                (str, i) -> str.substring(i)	                                                 String::substring
+  
+                (String s) -> System.out.println(s)                                           System.out::println
+  
+  ```
 
 
 
