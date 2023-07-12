@@ -402,6 +402,16 @@ Note that none of the functional interfaces allow for a checked exception to be 
 -  and/or: ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/b0e428b1-3bf0-4de5-9e3b-dc1e02cdacfb)
 
 
+## 13: Composing Functions
+- The Function interface comes with two default methods for this,
+   - andThen and
+   - compose,
+- For example, given a function f that increments a number (x -> x + 1)
+- and another function g that multiples a number by 2,
+-  you can combine them to create a function h that first increments a number and then multiplies the result by 2
+- ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/1c9ca8c6-7ecc-44c4-a555-47f3232501f3)
+
+- ![image](https://github.com/ankurkoul/java8-interview-prep/assets/7008603/fa8dbf43-53e2-4d29-8a0b-3f0d5d582c10)
 
 
 
