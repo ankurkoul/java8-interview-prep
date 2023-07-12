@@ -93,6 +93,7 @@ public static List<Apple> filterApplesByColor(List<Apple> inventory,
 
 
 ```
+//------------------------------------------------------------------------------------------
 Attempt 2: achieve using class
 
 public interface ApplePredicate{
@@ -115,7 +116,7 @@ public static List<Apple> filterApplesByColor(List<Apple> inventory,
     return result;
 }
 
-
+//------------------------------------------------------------------------------------------
 Attempt 3: achieve using anonymous class 
 
 public interface ApplePredicate{
@@ -142,12 +143,12 @@ List<Apple> res=filterApplesByColor( myList, new ApplePredicate(){
 
 
 
-
+//------------------------------------------------------------------------------------------
 Attempt 4: achieve using lambda
 
 List<Apple> res=filterApplesByColor( myList, app-> app.getColor().equals("red"));
 
-
+//------------------------------------------------------------------------------------------
 Attempt 5: making it generic:
 
 public interface Predicate{
