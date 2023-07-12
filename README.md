@@ -204,6 +204,48 @@ A lambda expression can be understood as a concise representation of an anonymou
 
 3.  () -> {return "Mario";}   //This lambda has no parameters and returns a String (using an explicit return statement).
 
+## 6  functional interface:
+
+functional interface is an interface that specifies exactly one abstract method 
+An interface is still a functional interface if it has many **default methods** as long as it specifies only one abstract method.
+- like comparator, comparable,runnable,callable
+
+```
+public interface Adder{
+    int add(int a, int b);
+}
+public interface SmartAdder extends Adder{
+    int add(double a, double b);
+}
+public interface Nothing{
+}
+
+Answer:
+Only Adder is a functional interface.SmartAdder isn’t a functional interface because it specifies two abstract methods called add (one is inherited from Adder).
+Nothing isn’t a functional interface because it declares no abstract method at all.
+```
+- Lambda expressions let you provide the implementation of the abstract method of a functional interface directly inline
+- and treat the whole expression as an instance of a functional interface 
+
+
+```
+Functional interface         |         Function descriptor|         Primitive specializations
+
+Predicate<T>                          	T -> boolean	                         IntPredicate, LongPredicate, DoublePredicate
+Consumer<T>	                           T -> void	                           	IntConsumer, LongConsumer, DoubleConsumer
+Function<T, R>		                       T -> R	                               IntFunction<R>, IntToDoubleFunction, IntToLongFunction, LongFunction<R>, LongToDoubleFunction, LongToIntFunction, 
+                                                                             DoubleFunction<R>, ToIntFunction<T>, ToDoubleFunction<T>, ToLongFunction<T>
+Supplier<T>	                           () -> T	                              BooleanSupplier, IntSupplier, LongSupplier, DoubleSupplier
+
+
+
+UnaryOperator<T>	 	                    T -> T	                              IntUnaryOperator, LongUnaryOperator, DoubleUnaryOperator
+BinaryOperator<T>	 	                   (T, T) -> T 	                       	IntBinaryOperator, LongBinaryOperator, DoubleBinaryOperator
+BiPredicate<L, R>	 	                   (L, R) -> boolean	 
+BiConsumer<T, U>	 	                    (T, U) -> void	 	                    ObjIntConsumer<T>, ObjLongConsumer<T>, ObjDoubleConsumer<T>
+BiFunction<T, U, R>	 	                 (T, U) -> R 	                    	ToIntBiFunction<T, U>, ToLongBiFunction<T, U>, ToDoubleBiFunction<T, U>
+
+```
 
 
 
