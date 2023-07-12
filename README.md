@@ -246,6 +246,78 @@ BiConsumer<T, U>	 	                    (T, U) -> void	 	                    ObjI
 BiFunction<T, U, R>	 	                 (T, U) -> R 	                    	ToIntBiFunction<T, U>, ToLongBiFunction<T, U>, ToDoubleBiFunction<T, U>
 
 ```
+## 7  Different functional interface:
+- based on function descriptor
+  -    signature of the abstract method
+- Predicate --->  boolean test(T e) ---> SAM with name test and boolean return
+   -  ```
+           @FunctionalInterface
+           public interface Predicate<T>{
+               boolean test(T t);
+           }
+      ```
+- consumer --->  void accept(T e) ---> SAM with name accept take generic type T  and void return
+-  ```
+       @FunctionalInterface
+           public interface Consumer<T>{
+               void accept(T t);
+           }
+   
+       public static <T> void myPrint(List<T> list, Consumer<T>c){
+          for(T e: list){
+            c.accept(e);
+          }
+         }
+   
+       myPrint(list,(Integer i)-> System.out.println(i);
+   ```
+    - you need to access an object of type T and perform some operations on it.
+    - For example, you can use it to create a method forEach, which takes a list of Integers and applies an operation on each element of that list
+      
+- Function --->  R apply(T e) ---> SAM with name apply take generic type T and R return
+- ```
+           @FunctionalInterface
+           public interface Function<T,R>{
+               R apply(T t);
+           }
+
+   
+        public static <T,R> List<R> map(List<T> list, Function<T,R> f){
+            List<R> res=new ArrayList<>();
+          for(T e: list){
+            res.add(f.apply(e));
+          }
+           return res;
+         }
+          
+       List<Integer> res=  map(myList, (String s)->s.length())
+  ```
+  - You might use this interface when you need to define a lambda that maps information from an input object to an output
+  - (for example, extracting the weight of an apple or mapping a string to its length).
+ 
+
+-  Supplier<T> ---> has a SAM called **get** representing a function descriptor
+-  ``` () -> T ```
+-   Ex : Callable<T> also has a SAM called call representing a function descriptor () -> T.
+
+5.  BiFunction<T, U, R> has a SAM called apply representing a function descriptor  ``` (T, U) -> R ```
+ ## 7  Primitive specializations
+ 
+ - specialized functional interfaces 
+-  every Java type is either a reference type or a primitive type
+-  But generic parameters (for example, the T in Consumer<T>) can be bound only to reference types.
+-  primitive to corresponding Reference conversion aka boxing and reverse is unboxing
+-  boxed values use more memory as store in heap
+-  Hence Java 8 brings a specialized version of the functional interfaces
+-  ex: DoublePredicate,  IntConsumer,  LongFunction , LongBinaryOperator
+  
+
+
+
+
+
+
+
 
 
 
