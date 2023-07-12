@@ -326,7 +326,7 @@ Compare two objects	                    (Apple a1, Apple a2) ->{
                                              }
 ```
 
-
+Note that none of the functional interfaces allow for a checked exception to be thrown
 
 
 
